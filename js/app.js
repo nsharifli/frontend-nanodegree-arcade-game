@@ -1,9 +1,9 @@
 // Enemies our player must avoid
 class Enemy {
-  constructor() {
+  constructor(x, y) {
     this.sprite = 'images/enemy-bug.png';
-    this.x = 0;
-    this.y = 0;
+    this.x = x;
+    this.y = y;
   }
 
   // Update the enemy's position, required method for game
@@ -26,6 +26,11 @@ class Enemy {
 
 
 // Now instantiate your objects.
+let enemyFirst = new Enemy(5, 225),
+    enemySecond = new Enemy(5, 140)
+    enemyThird = new Enemy(5, 55)
+
+let allEnemies = [enemyFirst, enemySecond, enemyThird]
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
