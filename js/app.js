@@ -13,7 +13,7 @@ class Enemy {
     if (this.x < 505) {
       this.x = this.x + this.speed * dt;
     } else {
-      this.x = -300;
+      this.x = -500;
       this.speed = this.randomSpeed();
     }
 
