@@ -16,11 +16,6 @@ class Enemy {
       this.x = -500;
       this.speed = this.randomSpeed();
     }
-
-
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
   }
 
   // Draw the enemy on the screen, required method for game
@@ -32,6 +27,21 @@ class Enemy {
     const max = 500,
           min = 100;
     return Math.floor(Math.random() * (max - min)) + min
+  }
+};
+
+class Player {
+  constructor(x, y) {
+    this.sprite = 'images/char-boy.png';
+    this.x = x;
+    this.y = y;
+  }
+
+  update(dt) {
+  }
+
+  render() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
   }
 };
 
@@ -51,6 +61,8 @@ let enemyFirst = new Enemy(-50, 225),
 let allEnemies = [enemyFirst, enemySecond, enemyThird, enemyFourth, enemyFifth, enemySixth]
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+
+let player = new Player(200, 450);
 
 
 
