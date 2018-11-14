@@ -37,6 +37,29 @@ class Player {
     this.y = y;
   }
 
+  handleInput(key) {
+    switch (key) {
+      case 'left':
+        if (this.x < 50) return;
+        this.x = this.x - 100
+        break;
+      case 'right':
+        if (this.x > 400) return;
+        this.x = this.x + 100
+        break;
+      case 'up':
+        if (this.y < 50) return;
+        this.y = this.y - 80
+        break;
+      case 'down':
+        if (this.y >= 375) return;
+        this.y = this.y + 80
+        break;
+      default:
+        console.log('Sorry')
+    }
+  }
+
   update(dt) {
   }
 
@@ -62,7 +85,7 @@ let allEnemies = [enemyFirst, enemySecond, enemyThird, enemyFourth, enemyFifth, 
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-let player = new Player(200, 450);
+let player = new Player(200, 375);
 
 
 
