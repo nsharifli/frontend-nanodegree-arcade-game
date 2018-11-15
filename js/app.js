@@ -48,7 +48,10 @@ class Player {
         this.x = this.x + 100
         break;
       case 'up':
-        if (this.y < 50) return;
+        if (this.y < 60) {
+           this.y = 375;
+           return;
+          };
         this.y = this.y - 80;
         break;
       case 'down':
