@@ -41,19 +41,19 @@ class Player {
     switch (key) {
       case 'left':
         if (this.x < 50) return;
-        this.x = this.x - 100
+        this.x = this.x - 100;
         break;
       case 'right':
-        if (this.x > 400) return;
+        if (this.x > 375) return;
         this.x = this.x + 100
         break;
       case 'up':
         if (this.y < 50) return;
-        this.y = this.y - 80
+        this.y = this.y - 80;
         break;
       case 'down':
         if (this.y >= 375) return;
-        this.y = this.y + 80
+        this.y = this.y + 80;
         break;
       default:
         console.log('Sorry')
