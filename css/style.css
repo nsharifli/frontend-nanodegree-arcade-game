@@ -1,3 +1,8 @@
 body {
     text-align: center;
 }
+
+.score-panel {
+  font-size: 40px;
+  color: cadetblue;
+}
