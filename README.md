@@ -1,6 +1,25 @@
-frontend-nanodegree-arcade-game
-===============================
+## Classic Arcade Game Clone - Frogger
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+### Project Requirements
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+You will be provided with visual assets and a game loop engine;
+using these tools you must add a number of entities to the game including the
+player characters and enemies to recreate the classic arcade game Frogger.
+
+### How to Start the Game
+
+* Download repo
+* Open index.html file
+
+### How to Play the Game
+
+* Use arrow keys to move the player
+* Avoid the enemies
+* If you collide with an enemy, player resets to starting position
+* Score increases when player reaches the water
+* Score resets to zero when player collides with an enemy
+
+### Author
+
+Nikki Sharifli
+nikki.sharifli@gmail.com
