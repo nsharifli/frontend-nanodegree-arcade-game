@@ -107,6 +107,8 @@ var Engine = (function(global) {
           player.y + player.height - 20 > enemy.y))) {
             player.x = initialPositionX;
             player.y = initialPositionY;
+            player.score = 0;
+            document.querySelector('.current-score').innerText = player.score;
         }
       })
     }

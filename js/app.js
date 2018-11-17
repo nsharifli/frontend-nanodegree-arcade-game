@@ -47,6 +47,7 @@ class Player {
     this.height = 90;
     this.x = x;
     this.y = y;
+    this.score = 0;
   }
 
   handleInput(key) {
@@ -63,6 +64,8 @@ class Player {
         if (this.y <= UpperBound) {
           this.x = InitialPositionX;
           this.y = InitialPositionY;
+          this.score += 1;
+          document.querySelector('.current-score').innerText = this.score;
           return;
           };
         this.y = this.y - VerticalStep;
