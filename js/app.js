@@ -4,6 +4,8 @@ class Enemy {
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
+    this.width = 101;
+    this.height = 85;
     this.speed = this.randomSpeed();
   }
 
@@ -20,7 +22,7 @@ class Enemy {
 
   // Draw the enemy on the screen, required method for game
   render() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    ctx.drawImage(Resources.get(this.sprite), 0, 70, this.width, this.height, this.x, this.y, this.width, this.height);
   }
 
   randomSpeed() {
@@ -35,6 +37,8 @@ class Player {
     this.sprite = 'images/char-boy.png';
     this.x = x;
     this.y = y;
+    this.width = 70;
+    this.height = 90;
   }
 
   handleInput(key) {
@@ -48,14 +52,14 @@ class Player {
         this.x = this.x + 100
         break;
       case 'up':
-        if (this.y < 60) {
-           this.y = 375;
+        if (this.y <= 130) {
+           this.y = 450;
            return;
           };
         this.y = this.y - 80;
         break;
       case 'down':
-        if (this.y >= 375) return;
+        if (this.y >= 450) return;
         this.y = this.y + 80;
         break;
       default:
@@ -67,7 +71,7 @@ class Player {
   }
 
   render() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    ctx.drawImage(Resources.get(this.sprite), 15, 60, this.width, this.height, this.x, this.y, this.width, this.height);
   }
 };
 
@@ -77,19 +81,18 @@ class Player {
 
 
 // Now instantiate your objects.
-let enemyFirst = new Enemy(-50, 225),
-    enemySecond = new Enemy(-300, 225),
-    enemyThird = new Enemy(-50, 140),
-    enemyFourth = new Enemy(-300, 140),
-    enemyFifth = new Enemy(-50, 55),
-    enemySixth = new Enemy(-300, 55);
+let enemyFirst = new Enemy(-50, 295),
+    enemySecond = new Enemy(-300, 295),
+    enemyThird = new Enemy(-50, 210),
+    enemyFourth = new Enemy(-300, 210),
+    enemyFifth = new Enemy(-50, 125),
+    enemySixth = new Enemy(-300, 125);
 
 let allEnemies = [enemyFirst, enemySecond, enemyThird, enemyFourth, enemyFifth, enemySixth]
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-let player = new Player(200, 375);
-
+let player = new Player(215, 450);
 
 
 // This listens for key presses and sends the keys to your

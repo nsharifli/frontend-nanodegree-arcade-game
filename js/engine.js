@@ -79,7 +79,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -94,6 +94,18 @@ var Engine = (function(global) {
             enemy.update(dt);
         });
         player.update();
+    }
+
+    function checkCollisions() {
+      allEnemies.forEach(function(enemy) {
+        if (((player.x < enemy.x + enemy.width - 10 &&
+          player.x + player.width - 10 > enemy.x &&
+          player.y < enemy.y + enemy.height - 10 &&
+          player.y + player.height - 20 > enemy.y))) {
+            player.x = 215;
+            player.y = 450;
+        }
+      })
     }
 
     /* This function initially draws the "game level", it will then call
