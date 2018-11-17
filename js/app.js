@@ -29,6 +29,7 @@ class Enemy {
   }
 
   // Draw the enemy on the screen, required method for game
+  // It clips the images, removes the whitespace.
   render() {
     ctx.drawImage(Resources.get(this.sprite), 0, 70, this.width, this.height, this.x, this.y, this.width, this.height);
   }
@@ -78,18 +79,12 @@ class Player {
 
   update(dt) {
   }
-
+  // It clips and draws the image, removes the whitespace.
   render() {
     ctx.drawImage(Resources.get(this.sprite), 15, 60, this.width, this.height, this.x, this.y, this.width, this.height);
   }
 };
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
-
-
-// Now instantiate your objects.
 let enemyFirst = new Enemy(-50, 295),
     enemySecond = new Enemy(-300, 295),
     enemyThird = new Enemy(-50, 210),
@@ -98,9 +93,6 @@ let enemyFirst = new Enemy(-50, 295),
     enemySixth = new Enemy(-300, 125);
 
 let allEnemies = [enemyFirst, enemySecond, enemyThird, enemyFourth, enemyFifth, enemySixth]
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
-
 let player = new Player(InitialPositionX, InitialPositionY);
 
 
