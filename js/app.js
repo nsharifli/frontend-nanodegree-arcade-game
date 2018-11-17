@@ -77,8 +77,6 @@ class Player {
     }
   }
 
-  update(dt) {
-  }
   // It clips and draws the image, removes the whitespace.
   render() {
     ctx.drawImage(Resources.get(this.sprite), 15, 60, this.width, this.height, this.x, this.y, this.width, this.height);
