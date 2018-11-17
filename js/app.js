@@ -1,11 +1,19 @@
-// Enemies our player must avoid
+const LeftBound = 50,
+      RightBound = 375,
+      UpperBound = 130,
+      LowerBound = 450,
+      HorizontalStep = 100,
+      VerticalStep = 80,
+      InitialPositionX = 215,
+      InitialPositionY = 450;
+
 class Enemy {
   constructor(x, y) {
     this.sprite = 'images/enemy-bug.png';
-    this.x = x;
-    this.y = y;
     this.width = 101;
     this.height = 85;
+    this.x = x;
+    this.y = y;
     this.speed = this.randomSpeed();
   }
 
@@ -35,35 +43,33 @@ class Enemy {
 class Player {
   constructor(x, y) {
     this.sprite = 'images/char-boy.png';
-    this.x = x;
-    this.y = y;
     this.width = 70;
     this.height = 90;
+    this.x = x;
+    this.y = y;
   }
 
   handleInput(key) {
     switch (key) {
       case 'left':
-        if (this.x < 50) return;
-        this.x = this.x - 100;
+        if (this.x <= LeftBound) return;
+        this.x = this.x - HorizontalStep;
         break;
       case 'right':
-        if (this.x > 375) return;
-        this.x = this.x + 100
+        if (this.x >= RightBound) return;
+        this.x = this.x + HorizontalStep
         break;
       case 'up':
-        if (this.y <= 130) {
-           this.y = 450;
-           return;
+        if (this.y <= UpperBound) {
+          this.x = InitialPositionX;
+          this.y = InitialPositionY;
+          return;
           };
-        this.y = this.y - 80;
-        break;
-      case 'down':
-        if (this.y >= 450) return;
-        this.y = this.y + 80;
+        this.y = this.y - VerticalStep;
         break;
       default:
-        console.log('Sorry')
+        if (this.y >= LowerBound) return;
+        this.y = this.y + VerticalStep;
     }
   }
 
@@ -92,7 +98,7 @@ let allEnemies = [enemyFirst, enemySecond, enemyThird, enemyFourth, enemyFifth, 
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-let player = new Player(215, 450);
+let player = new Player(InitialPositionX, InitialPositionY);
 
 
 // This listens for key presses and sends the keys to your

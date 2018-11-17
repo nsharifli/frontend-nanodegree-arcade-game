@@ -97,13 +97,16 @@ var Engine = (function(global) {
     }
 
     function checkCollisions() {
+      const initialPositionX = 215,
+            initialPositionY = 450;
+
       allEnemies.forEach(function(enemy) {
         if (((player.x < enemy.x + enemy.width - 10 &&
           player.x + player.width - 10 > enemy.x &&
           player.y < enemy.y + enemy.height - 10 &&
           player.y + player.height - 20 > enemy.y))) {
-            player.x = 215;
-            player.y = 450;
+            player.x = initialPositionX;
+            player.y = initialPositionY;
         }
       })
     }
